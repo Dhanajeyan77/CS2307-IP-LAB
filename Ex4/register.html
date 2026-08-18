@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+    <title>Job Portal - Registration</title>
+    <style>
+        body { background-color: lightgray; font-family: sans-serif; }
+        
+        .error { color: red; font-size: 0.85em; display: block; }
+        .success { color: green; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1 align="center"><b>Job Seeker Registration</b></h1>
+    <a href="index.html">Back to home</a><br><br>
+<hr>
+    <form id="registrationForm">
+        <table border="1" align="center">
+            <tr>
+                <td><label for="fullName"><b>Full Name:</b></label></td>
+                <td>
+                    <input type="text" id="fullName"/>
+                    <span id="fullNameError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email"><b>Email Address:</b></label></td>
+                <td>
+                    <input type="text" id="email"/>
+                    <span id="emailError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phone"><b>Phone Number:</b></label></td>
+                <td>
+                    <input type="text" id="phone"/>
+                    <span id="phoneError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label><b>Gender:</b></label></td>
+                <td>
+                    <input type="radio" name="gender" id="male" value="Male"> <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="Female"> <label for="female">Female</label>
+               
+                    <span id="genderError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password"><b>Password:</b></label></td>
+                <td>
+                    <input type="password" id="password"/>
+                    <span id="passwordError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jobTitle"><b>Desired Job Title:</b></label></td>
+                <td>
+                    <input type="text" id="jobTitle"/>
+                    <span id="jobTitleError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="experience"><b>Experience (Years):</b></label></td>
+                <td>
+                    <input type="number" id="experience"/>
+                    <span id="experienceError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="resumeLink"><b>Portfolio/Resume Link:</b></label></td>
+                <td>
+                    <input type="text" id="resumeLink"/>
+                    <span id="resumeLinkError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="resumeFile"><b>Upload Resume:</b></label></td>
+                <td>
+                    <input type="file" id="resumeFile" accept=".pdf"/>
+                    <span id="resumeFileError" class="error"></span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div align="center">
+            <input type="submit" value="Register"/>
+        </div>
+    </form>
+    <br>
+
+    <div id="successMsg" class="success"></div>
+
+    <p align="center">
+        Already have an account? <a href="login.html">Login here</a>
+    </p>
+<hr>
+    <h3><b>Guidelines:</b></h3>
+    <ul>
+        <li><i>ENTER YOUR ACTIVE EMAIL ADDRESS</i></li>
+        <li><i>PASSWORDS ARE CASE SENSITIVE AND MINIMUM 6 CHARACTERS</i></li>
+        <li><i>RESUME MUST BE IN PDF FORMAT ONLY</i></li>
+    </ul>
+
+<script>
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let isValid = true;
+
+  document.querySelectorAll('.error').forEach(el => el.textContent = "");
+  document.getElementById("successMsg").textContent = "";
+
+  
+  const fullName = document.getElementById("fullName").value.trim();
+  const namePattern = /^[A-Za-z\s]+$/; 
+  if (fullName === "") {
+    document.getElementById("fullNameError").textContent = "Name is required.";
+    isValid = false;
+  } else if (!namePattern.test(fullName)) {
+    document.getElementById("fullNameError").textContent = "Name must contain only letters and spaces.";
+    isValid = false;
+  }
+
+ 
+  const email = document.getElementById("email").value.trim();
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (email === "") {
+    document.getElementById("emailError").textContent = "Email is required.";
+    isValid = false;
+  } else if (!emailPattern.test(email)) {
+    document.getElementById("emailError").textContent = "Please enter a valid email address.";
+    isValid = false;
+  }
+ 
+  
+  const phone = document.getElementById("phone").value.trim();
+  const phonePattern = /^[0-9]{10}$/;
+  if (phone === "") {
+    document.getElementById("phoneError").textContent = "Phone number is required.";
+    isValid = false;
+  } else if (!phonePattern.test(phone)) {
+    document.getElementById("phoneError").textContent = "Enter a valid 10 digit phone number.";
+    isValid = false;
+  }
+
+  
+  const genderSelected = document.querySelector('input[name="gender"]:checked');
+  if (!genderSelected) {
+    document.getElementById("genderError").textContent = "Please select your gender.";
+    isValid = false;
+  }
+  
+ 
+  const password = document.getElementById("password").value;
+  if (password === "") {
+    document.getElementById("passwordError").textContent = "Password is required.";
+    isValid = false;
+  } else if (password.length < 8) {
+    document.getElementById("passwordError").textContent = "Password must be at least 8 characters.";
+    isValid = false;
+  }
+  
+  
+  const jobTitle = document.getElementById("jobTitle").value.trim();
+  if (jobTitle === "") {
+    document.getElementById("jobTitleError").textContent = "Desired job title is required.";
+    isValid = false;
+  }
+  
+ 
+  const experience = document.getElementById("experience").value;
+  if (experience === "") {
+    document.getElementById("experienceError").textContent = "Experience is required.";
+    isValid = false;
+  } else if (experience < 0) {
+    document.getElementById("experienceError").textContent = "Experience cannot be negative.";
+    isValid = false;
+  }
+
+ 
+  const resumeLink = document.getElementById("resumeLink").value.trim();
+  const urlPattern = /^(https?:\/\/)[^\s]+$/;
+  if (resumeLink !== "" && !urlPattern.test(resumeLink)) {
+    document.getElementById("resumeLinkError").textContent = "Enter a valid URL starting with http:// or https://";
+    isValid = false;
+  }
+  
+ 
+  const resumeFile = document.getElementById("resumeFile").value;
+  if (resumeFile === "") {
+    document.getElementById("resumeFileError").textContent = "Please upload your resume.";
+    isValid = false;
+  } else {
+    const allowedExtensions = /\.pdf$/i;
+    if (!allowedExtensions.test(resumeFile)) {
+      document.getElementById("resumeFileError").textContent = "Only PDF files are allowed.";
+      isValid = false;
+    }
+  }
+
+  if (isValid) {
+    document.getElementById("successMsg").textContent = "Registration successful!";
+    document.getElementById("registrationForm").reset();
+  }
+});
+</script>
+
+</body>
+</html>
+

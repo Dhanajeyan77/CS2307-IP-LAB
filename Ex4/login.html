@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Job Portal - Login</title>
+    <style>
+        body { background-color: lightgray; font-family: sans-serif; }
+        .center-text { text-align: center; }
+        .center-table { margin: 0 auto; }
+        .error { color: red; font-size: 0.85em; display: block; }
+        .success { color: green; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1 class="center-text">Job Seeker Login</h1>
+    <a href="index.html">Back to home</a><br><br>
+
+    <form id="loginForm">
+        <table border="1" class="center-table">
+            <tr>
+                <td><label for="loginEmail"><b>Email Address:</b></label></td>
+                <td>
+                    <input type="text" id="loginEmail"/>
+                    <span id="loginEmailError" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="loginPassword"><b>Password:</b></label></td>
+                <td>
+                    <input type="password" id="loginPassword"/>
+                    <span id="loginPasswordError" class="error"></span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div class="center-text">
+            <input type="submit" value="Sign In"/>
+        </div>
+    </form>
+    <br>
+
+    <div id="loginSuccessMsg" class="success"></div>
+
+    <p class="center-text">
+        Don't have an account? <a href="register.html">Register here</a>
+    </p>
+
+    <h3>Guidelines:</h3>
+    <ul>
+        <li><i>ENTER YOUR REGISTERED EMAIL ADDRESS</i></li>
+        <li><i>PASSWORDS ARE CASE SENSITIVE</i></li>
+    </ul>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let isValid = true;
+
+  document.getElementById("loginEmailError").textContent = "";
+  document.getElementById("loginPasswordError").textContent = "";
+  document.getElementById("loginSuccessMsg").textContent = "";
+
+  
+  const email = document.getElementById("loginEmail").value.trim();
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (email === "") {
+    document.getElementById("loginEmailError").textContent = "Email is required.";
+    isValid = false;
+  } else if (!emailPattern.test(email)) {
+    document.getElementById("loginEmailError").textContent = "Please enter a valid email address.";
+    isValid = false;
+  }
+
+
+  const password = document.getElementById("loginPassword").value;
+  if (password === "") {
+    document.getElementById("loginPasswordError").textContent = "Password is required.";
+    isValid = false;
+  }
+
+  if (isValid) {
+    document.getElementById("loginSuccessMsg").textContent = "Login submitted successfully!";
+    
+  }
+});
+</script>
+
+</body>
+</html>
+
