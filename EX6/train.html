@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Train Booking</title>
+
+    <style>
+
+        body {
+            background-color: rgb(24, 122, 179);
+            font-family: Arial;
+        }
+
+        .box {
+            background-color: white;
+            border: 3px solid black;
+            padding: 20px;
+            margin: 30px auto;
+            width: 500px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        input {
+            padding: 8px;
+            width: 90%;
+        }
+
+        input[type="submit"] {
+            width: 150px;
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Train Schedule</h1>
+
+    <a href="index.html">
+        Back to Home
+    </a>
+
+    <br><br>
+
+    <table>
+
+        <tr>
+            <th>Train Number</th>
+            <th>Starting Point</th>
+            <th>Ending Point</th>
+            <th>Price</th>
+            <th>Timing</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>MDU</td>
+            <td>VDU</td>
+            <td>50</td>
+            <td>3:00 AM</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>MDU</td>
+            <td>CHN</td>
+            <td>100</td>
+            <td>8:00 AM</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <h2>Book Your Ticket</h2>
+
+    <form action="TrainServlet" method="post">
+
+        <label>Enter Train Number</label>
+        <br><br>
+
+        <input type="text"
+               name="trainNo"
+               required>
+
+        <br><br>
+
+        <label>Enter Seat Count</label>
+        <br><br>
+
+        <input type="number"
+               name="seatCount"
+               required>
+
+        <br><br>
+
+        <label>Enter Transaction ID</label>
+        <br><br>
+
+        <input type="text"
+               name="transactionId"
+               required>
+
+        <br><br>
+
+        <label>Enter Total Amount</label>
+        <br><br>
+
+        <input type="number"
+               name="total"
+               step="0.01"
+               required>
+
+        <br><br>
+
+        <input type="submit"
+               value="Book Ticket">
+
+    </form>
+
+    <br>
+
+    <h3>Guidelines</h3>
+
+    <ul style="text-align:left">
+
+        <li>Be disciplined</li>
+
+        <li>Be on time</li>
+
+        <li>Keep payment proof</li>
+
+    </ul>
+
+</div>
+
+</body>
+
+</html>
