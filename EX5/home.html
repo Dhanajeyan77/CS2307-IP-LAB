@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Portal - Home</title>
+
+    <style>
+        body {
+            background-color: lightskyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .portal-container {
+            max-width: 500px;
+            width: 90%;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .rules-card {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            text-align: left;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .rules-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .rules-card ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .rules-card li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .start-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .start-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="portal-container">
+    <h1>Welcome to the Quiz Platform</h1>
+
+    <p>Test your fundamental knowledge of web technologies.</p>
+
+    <div class="rules-card">
+        <h3>Quiz Instructions</h3>
+
+        <ul>
+            <li>The quiz contains 10 multiple-choice questions.</li>
+            <li>Questions cover HTML, CSS and JavaScript.</li>
+            <li>All questions are mandatory.</li>
+            <li>Check your answers before submitting.</li>
+        </ul>
+    </div>
+
+    <a href="quiz.html" class="start-btn">
+        Start Quiz
+    </a>
+</div>
+
+</body>
+</html>
