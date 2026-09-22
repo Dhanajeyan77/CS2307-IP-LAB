@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>101</id>
+        <name>Wireless Mouse</name>
+        <description>Ergonomic wireless mouse with USB receiver.</description>
+        <price>25.00</price>
+    </product>
+    <product>
+        <id>102</id>
+        <name>Mechanical Keyboard</name>
+        <description>RGB mechanical keyboard with blue switches.</description>
+        <price>89.99</price>
+    </product>
+    <product>
+        <id>103</id>
+        <name>HD Monitor</name>
+        <description>24-inch 1080p IPS monitor.</description>
+        <price>140.50</price>
+    </product>
+    <product>
+        <id>104</id>
+        <name>USB-C Hub</name>
+        <description>7-in-1 USB-C hub with HDMI and card reader.</description>
+        <price>35.00</price>
+    </product>
+</products>

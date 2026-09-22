@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html">Place Order</a>
+            <a href="view.php">View Orders</a>
+        </div>
+        <h2>Place a New Order</h2>
+        <form method="POST" action="insert.php">
+            <div class="form-group">
+                <label for="customer_name">Customer Name</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+            </div>
+            <div class="form-group">
+                <label for="product_name">Product Name</label>
+                <input type="text" id="product_name" name="product_name" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" required min="1">
+            </div>
+            <div class="form-group">
+                <label for="total_price">Total Price ($)</label>
+                <input type="number" id="total_price" step="0.01" name="total_price" required min="0.01">
+            </div>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>
