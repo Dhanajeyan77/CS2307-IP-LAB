@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+    <!-- Vetrimaaran Movies -->
+    <movie>
+        <title>Polladhavan</title>
+        <director>Vetrimaaran</director>
+        <year>2007</year>
+        <genre>Action Thriller</genre>
+    </movie>
+    <movie>
+        <title>Aadukalam</title>
+        <director>Vetrimaaran</director>
+        <year>2011</year>
+        <genre>Drama</genre>
+    </movie>
+    <movie>
+        <title>Visaranai</title>
+        <director>Vetrimaaran</director>
+        <year>2016</year>
+        <genre>Crime Thriller</genre>
+    </movie>
+    <movie>
+        <title>Vada Chennai</title>
+        <director>Vetrimaaran</director>
+        <year>2018</year>
+        <genre>Action Crime</genre>
+    </movie>
+    <movie>
+        <title>Asuran</title>
+        <director>Vetrimaaran</director>
+        <year>2019</year>
+        <genre>Action Drama</genre>
+    </movie>
+    <movie>
+        <title>Viduthalai Part 1</title>
+        <director>Vetrimaaran</director>
+        <year>2023</year>
+        <genre>Crime Drama</genre>
+    </movie>
+
+    <!-- Ram Movies -->
+    <movie>
+        <title>Kattradhu Thamizh</title>
+        <director>Ram</director>
+        <year>2007</year>
+        <genre>Psychological Thriller</genre>
+    </movie>
+    <movie>
+        <title>Thanga Meenkal</title>
+        <director>Ram</director>
+        <year>2013</year>
+        <genre>Family Drama</genre>
+    </movie>
+    <movie>
+        <title>Taramani</title>
+        <director>Ram</director>
+        <year>2017</year>
+        <genre>Romantic Drama</genre>
+    </movie>
+    <movie>
+        <title>Peranbu</title>
+        <director>Ram</director>
+        <year>2019</year>
+        <genre>Drama</genre>
+    </movie>
+
+    <!-- Sasikumar Movies -->
+    <movie>
+        <title>Subramaniapuram</title>
+        <director>M. Sasikumar</director>
+        <year>2008</year>
+        <genre>Period Action</genre>
+    </movie>
+    <movie>
+        <title>Easan</title>
+        <director>M. Sasikumar</director>
+        <year>2010</year>
+        <genre>Thriller</genre>
+    </movie>
+
+    <!-- Kamal Haasan Movies -->
+    <movie>
+        <title>Hey Ram</title>
+        <director>Kamal Haasan</director>
+        <year>2000</year>
+        <genre>Historical Drama</genre>
+    </movie>
+    <movie>
+        <title>Virumaandi</title>
+        <director>Kamal Haasan</director>
+        <year>2004</year>
+        <genre>Action Drama</genre>
+    </movie>
+    <movie>
+        <title>Vishwaroopam</title>
+        <director>Kamal Haasan</director>
+        <year>2013</year>
+        <genre>Spy Thriller</genre>
+    </movie>
+</collection>

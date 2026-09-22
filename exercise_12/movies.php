@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Library Books</title>
+    <title>Tamil Movie Collection</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Book Collection</h2>
+        <h2>Tamil Movie Collection</h2>
         <table>
             <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Publication Year</th>
-                <th>Price ($)</th>
+                <th>Movie Title</th>
+                <th>Director</th>
+                <th>Release Year</th>
+                <th>Genre</th>
             </tr>
             <?php
-            $xmlFile = 'books.xml';
+            $xmlFile = 'movies.xml';
             
             if (file_exists($xmlFile)) {
                 $xml = simplexml_load_file($xmlFile);
@@ -24,12 +24,12 @@
                 if ($xml === false) {
                     echo "<tr><td colspan='4'>Failed to load XML file.</td></tr>";
                 } else {
-                    foreach ($xml->book as $book) {
+                    foreach ($xml->movie as $movie) {
                         echo "<tr>";
-                        echo "<td>" . htmlspecialchars($book->title) . "</td>";
-                        echo "<td>" . htmlspecialchars($book->author) . "</td>";
-                        echo "<td>" . htmlspecialchars($book->publication_year) . "</td>";
-                        echo "<td>$" . number_format((float)$book->price, 2) . "</td>";
+                        echo "<td>" . htmlspecialchars($movie->title) . "</td>";
+                        echo "<td>" . htmlspecialchars($movie->director) . "</td>";
+                        echo "<td>" . htmlspecialchars($movie->year) . "</td>";
+                        echo "<td>" . htmlspecialchars($movie->genre) . "</td>";
                         echo "</tr>";
                     }
                 }
