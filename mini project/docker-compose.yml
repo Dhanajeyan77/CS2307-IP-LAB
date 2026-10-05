@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=job_portal
+      - DB_USER=root
+      - DB_PASS=Thala@2007
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./uploads:/var/www/html/uploads
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Thala@2007
+      - MYSQL_DATABASE=job_portal
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
